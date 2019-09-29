@@ -7,7 +7,9 @@ const forecast = require('../utils/forecast.js')
 const pubpath = path.join(__dirname, '../public')
 const partialpath = path.join(__dirname, '../views/partials')
 
-console.log(pubpath)
+const port= process.env.PORT || 3000
+
+// console.log(pubpath)
 
 const app = express()
 
@@ -76,6 +78,6 @@ app.get('*', (req,res) =>{
 	})
 })
 
-app.listen(3000, () =>{
+app.listen(port, () =>{
 	console.log('server started...')
 })

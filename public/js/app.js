@@ -9,7 +9,7 @@ myform.addEventListener('submit',(e) =>{
 
 	text2.textContent = ''
 	text1.textContent = 'Loading...'
-	fetch('http://localhost:3000/weather?place='+myinp.value).then((response) =>{
+	fetch('/weather?place='+myinp.value).then((response) =>{
 		response.json().then( (data) =>{
 			// console.log(data)
 			if(data.error){
