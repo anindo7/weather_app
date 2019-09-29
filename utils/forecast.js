@@ -12,7 +12,9 @@ const forecast = (latitude,longitude,callback) => {
 		}
 		else{
 			// console.log(response.body.currently)
-			const data = body.currently.summary + '. The temperature currently is '+body.currently.temperature+' and the chances of rain is '+body.currently.precipProbability
+			let data = body.currently.summary + '. The temperature currently is '+body.currently.temperature+' degrees, feels like '+ body.currently.apparentTemperature
+			data = data + ' degrees. The chances of rain is '+(body.currently.precipProbability*100)
+			data = data + '% and the current humidity is '+(body.currently.humidity*100)+'%.'
 			callback(undefined,data)
 		}
 	})
